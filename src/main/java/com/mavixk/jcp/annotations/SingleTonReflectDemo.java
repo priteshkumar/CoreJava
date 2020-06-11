@@ -52,6 +52,8 @@ public class SingleTonReflectDemo {
           (SingleTonReflection) constructor.newInstance();
       System.out.println(inst2);
       inst2.displayStats();
+      //this will not work directly
+      //SingleTonReflection obj = new SingleTonReflection();
     } catch (NoSuchMethodException e) {
       e.printStackTrace();
     } catch (IllegalAccessException e) {
