@@ -5,13 +5,12 @@ import java.lang.reflect.InvocationTargetException;
 
 class SingleTonReflection {
 
-  private static SingleTonReflection inst;
+  private static SingleTonReflection inst = new SingleTonReflection();
 
   private SingleTonReflection() {
     if (inst != null) {
       throw new RuntimeException("use getInstance()");
     }
-//    inst = this;
   }
 
   public static SingleTonReflection getInstance() {
