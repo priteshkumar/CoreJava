@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 
 class SingleTonReflection {
 
+  //early loading of singleton to prevent reflection misuse
   private static SingleTonReflection inst = new SingleTonReflection();
 
   private SingleTonReflection() {
