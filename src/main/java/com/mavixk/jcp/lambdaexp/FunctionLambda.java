@@ -3,13 +3,21 @@ package com.mavixk.jcp.lambdaexp;
 import java.util.function.Function;
 
 public class FunctionLambda {
-  public static void main(String[] args){
+
+  public static void main(String[] args) {
     String val = "hello";
     testFunctionLambda();
   }
 
-  public static void testFunctionLambda(){
-    Function<String,String> func = (str) -> str.toUpperCase();
+  public static void testFunctionLambda() {
+    Function<String, String> func = (str) -> str.toUpperCase();
     System.out.println(func.apply("javacode"));
+
+    Function<String, String> removeSpace = (str) -> {
+      return str.replaceAll(" ", "");
+    };
+
+    System.out.println(removeSpace.apply("this book"));
+
   }
 }
