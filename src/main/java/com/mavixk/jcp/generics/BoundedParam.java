@@ -1,4 +1,4 @@
-package com.mavixk.jcp;
+package com.mavixk.jcp.generics;
 
 class PersonV2<S,T extends Number>{
   private S name;

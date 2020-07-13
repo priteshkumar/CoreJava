@@ -1,4 +1,4 @@
-package com.mavixk.jcp;
+package com.mavixk.jcp.generics;
 
 class Pair<K,V>{
   private K key;

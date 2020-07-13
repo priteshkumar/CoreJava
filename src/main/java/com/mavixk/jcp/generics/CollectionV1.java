@@ -1,4 +1,4 @@
-package com.mavixk.jcp;
+package com.mavixk.jcp.generics;
 import java.util.*;
 
 public class CollectionV1 {

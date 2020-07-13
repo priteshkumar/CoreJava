@@ -1,5 +1,6 @@
 package com.mavixk.jcp;
 
+import com.mavixk.jcp.generics.GetMaxGeneric;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.*;
 import java.util.Arrays;
@@ -24,6 +25,6 @@ public class GetMaxGenericTest {
       e.printStackTrace();
     }
     List<Integer> a = Arrays.asList(23, 34, 21, 67, 43);
-    assertEquals(67,GetMaxGeneric.getMax(a, 0, a.size()));
+    assertEquals(67, GetMaxGeneric.getMax(a, 0, a.size()));
   }
 }

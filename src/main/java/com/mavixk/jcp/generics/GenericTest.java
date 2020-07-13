@@ -1,5 +1,4 @@
-package com.mavixk.jcp;
-import java.util.*;
+package com.mavixk.jcp.generics;
 
 
 class ListNode<T extends Comparable<? super T>> implements Comparable<ListNode<T>>{
