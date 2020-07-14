@@ -3,6 +3,7 @@ package com.mavixk.jcp.generics;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.function.Predicate;
 
 public class GenericsDemo {
   public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class GenericsDemo {
     System.out.println(max(list2));
   //  List<Number> list3 = Arrays.asList(32,23,21,39);
     //System.out.println(max(list3));
+    testPredicate();
   }
 
   public static <T extends Comparable<T>> void swap(T[] a, int i,int j){
@@ -37,4 +39,11 @@ public class GenericsDemo {
     }
     return maxElement;
   }
+
+  public static void testPredicate(){
+    Predicate<Integer> testp = (n) -> n % 2 == 0;
+    System.out.println(testp.test(20));
+  }
 }
+
+
