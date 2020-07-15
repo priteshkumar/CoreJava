@@ -1,0 +1,19 @@
+The below dump shows erasure of type params by compiler
+
+Compiled from "UpperBoundWld.java"
+public class com.mavixk.jcp.generics.UpperBoundWld {
+  public com.mavixk.jcp.generics.UpperBoundWld();
+    descriptor: ()V
+
+  public static double uppersumval(java.util.List<? extends java.lang.Number>);
+    descriptor: (Ljava/util/List;)D
+
+  public static int countElem(java.util.List<?>);
+    descriptor: (Ljava/util/List;)I
+
+  public static void addElem(java.util.List<? super java.lang.Integer>);
+    descriptor: (Ljava/util/List;)V
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+}

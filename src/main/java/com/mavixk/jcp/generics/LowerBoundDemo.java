@@ -15,6 +15,13 @@ public class LowerBoundDemo {
     List<String> d = new ArrayList<>();
     copyData(c,d);
     printElements(d);
+
+    List<Integer> list = new ArrayList<>();
+    list.add(34);
+    list.add(44);
+    List<? extends Number> nlist = list;
+    //nlist.add(10) is invalid
+
   }
 
   public static void printElements(List<?> list){
