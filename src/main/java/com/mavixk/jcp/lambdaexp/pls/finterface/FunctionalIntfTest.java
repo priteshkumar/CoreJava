@@ -28,7 +28,13 @@ public class FunctionalIntfTest {
     default boolean testVal(T val){
       return true;
     }
+
     //Object overridden methods do not count
     boolean equals(Object object);
+
+    /*
+    default int hashCode() {
+      return 0;
+    }*/
   }
 }
