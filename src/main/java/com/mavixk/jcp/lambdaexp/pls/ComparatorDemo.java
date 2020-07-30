@@ -55,6 +55,15 @@ class Person {
   public void setLname(String lname) {
     this.lname = lname;
   }
+
+  @Override
+  public String toString() {
+    return "Person{" +
+        "age=" + age +
+        ", fname='" + fname + '\'' +
+        ", lname='" + lname + '\'' +
+        '}';
+  }
 }
 
 public class ComparatorDemo {
