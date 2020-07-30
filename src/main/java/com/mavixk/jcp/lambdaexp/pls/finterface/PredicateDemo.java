@@ -8,7 +8,16 @@ interface Predicate<T> {
   default public Predicate<T> and(Predicate<T> other) {
     return (t) -> test(t) && other.test(t);
   }
+
+  default public Predicate<T> or(Predicate<T> other){
+    return (t) -> test(t) || other.test(t);
+  }
+
+  public static <U> Predicate<U> isEqualsTo(U u){
+    return (s) -> s.equals(u);
+  }
 }
+
 
 public class PredicateDemo {
   public static void main(String[] args){
@@ -19,5 +28,8 @@ public class PredicateDemo {
     System.out.println(p.test("Jenkins"));
     System.out.println(p.test("aws"));
     System.out.println(p.test("Docker"));
+
+    Predicate<String> p3 = Predicate.isEqualsTo("Jenkins");
+    System.out.println(p3.test("Jenkins"));
   }
 }
