@@ -7,8 +7,20 @@ import java.util.Map;
 
 public class MapInterface {
   public static void main(String[] args){
+
+    System.out.println("call testMapForEach");
+    testMapForEach();
+    System.out.println("call testMapGetPut");
     testMapInterface();
+    System.out.println("call testMapCompute");
     testMapCompute();
+  }
+
+  public static void testMapForEach(){
+    Map<String,String> resMap = new HashMap<>();
+    resMap.putIfAbsent("South Korea","Seoul");
+    resMap.putIfAbsent("Israel","Tel Aviv");
+    resMap.forEach((k,v) -> System.out.println(k + " " + v));
   }
 
   public static void testMapInterface(){

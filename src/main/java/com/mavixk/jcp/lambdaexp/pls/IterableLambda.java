@@ -6,26 +6,43 @@ import java.util.List;
 public class IterableLambda {
 
   public static void main(String[] args) {
+    //pass println consumer to forEach
+    //alist.forEach(System.out::println);
+    System.out.println("call testforEach");
+    testForEach();
+    System.out.println("call testRemoveIf");
+    testRemoveIf();
+    System.out.println("call testReplaceAll");
+    testReplaceAll();
+    System.out.println("call testComparator");
+    testSortComparator();
+  }
 
+  public static void testForEach(){
     List<String> alist = new ArrayList<>();
     alist.add("jenkins");
     alist.add("docker");
     alist.add("aws");
-    alist.add("chef");
+    alist.forEach(s -> System.out.println(s));
+  }
+
+  public static void testRemoveIf(){
+    List<String> alist = new ArrayList<>();
+    alist.add("jenkins");
+    alist.add("docker");
     alist.add("github");
+    alist.add("aws");
 
-    //pass println consumer to forEach
-    //alist.forEach(System.out::println);
-    alist.forEach((s) -> System.out.println(s));
-    alist.removeIf((s) -> s.equals("chef"));
-    System.out.println("######removed chef######");
-    alist.forEach((s) -> System.out.println(s));
-
-    System.out.println("#####transform all to upper case#####");
-    alist.replaceAll((s) -> s.toUpperCase());
+    alist.removeIf(s -> s.charAt(0) == 'a');
     alist.forEach(System.out::println);
+  }
 
-    testSortComparator();
+  public static void testReplaceAll(){
+    List<String> alist = new ArrayList<>();
+    alist.add("jenkins");
+    alist.add("docker");
+    alist.replaceAll(s -> s.toUpperCase());
+    alist.forEach(System.out::println);
   }
 
   public static void testSortComparator() {
