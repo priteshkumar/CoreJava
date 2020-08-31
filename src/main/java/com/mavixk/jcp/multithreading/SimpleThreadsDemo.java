@@ -24,6 +24,10 @@ public class SimpleThreadsDemo {
     long timeout = 7 * 1000;
     Thread t =  new Thread(messageLoop);
     t.start();
+    //checks periodically if messageloop is alive
+    //wait for 1 second
+    //if timeout passed and still alive , interrupt messageloop
+    //exit
     while(t.isAlive()){
       System.out.println("waiting on jenkins jobs");
       t.join(1000);
