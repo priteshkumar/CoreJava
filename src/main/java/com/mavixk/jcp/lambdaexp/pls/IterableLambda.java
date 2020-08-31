@@ -8,6 +8,7 @@ public class IterableLambda {
   public static void main(String[] args) {
     //pass println consumer to forEach
     //alist.forEach(System.out::println);
+    testConvertValues();
     System.out.println("call testforEach");
     testForEach();
     System.out.println("call testRemoveIf");
@@ -51,5 +52,17 @@ public class IterableLambda {
     personList.add(new Person(30, "Ulrich", "Drepper"));
     personList.sort(java.util.Comparator.comparing(Person::getAge).thenComparing(Person::getFname));
     personList.forEach(System.out::println);
+  }
+
+  public static void testConvertValues(){
+    List<Person> personList = new ArrayList<>();
+    personList.add(new Person(32, "Rusty", "Russell"));
+    personList.add(new Person(30, "Ulrich", "Drepper"));
+    List<Integer> ilist = new ArrayList<>();
+    personList.forEach((p) -> {
+      Integer val = Integer.valueOf(p.getAge()) + 100;
+      ilist.add(val);
+    });
+    System.out.println(ilist);
   }
 }
