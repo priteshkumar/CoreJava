@@ -13,6 +13,7 @@ public class SimpleThreadsDemo {
       try {
         for (String job : ciJobs) {
           Thread.sleep(3000);
+          System.out.println(Thread.currentThread().getState());
           System.out.println(Thread.currentThread().getName() + " \n" + job);
         }
       } catch (InterruptedException e) {
@@ -30,6 +31,7 @@ public class SimpleThreadsDemo {
     //exit
     while(t.isAlive()){
       System.out.println("waiting on jenkins jobs");
+      System.out.println(t.getState());
       t.join(1000);
       if((System.currentTimeMillis() - start > timeout) && t.isAlive()){
         t.interrupt();
