@@ -3,6 +3,8 @@
 
 https://www3.ntu.edu.sg/home/ehchua/programming/java/j5e_multithreading.html
 
+https://docs.oracle.com/javase/tutorial/essential/concurrency/threads.html
+
 
 ### Thread Lock Interface
 
