@@ -11,7 +11,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <pcdp.version>0.0.4-SNAPSHOT</pcdp.version>
       </properties>
+      <repositories>
+                  <repository>
+                      <id>pcdp-repo</id>
+                      <url>https://raw.github.com/habanero-maven/hjlib-maven-repo/mvn-repo-pcdp-${pcdp.version}/</url>
+                      <snapshots>
+                          <enabled>true</enabled>
+                          <updatePolicy>always</updatePolicy>
+                      </snapshots>
+                  </repository>
+              </repositories>
     <dependencies>
         <dependency>
           <groupId>org.junit.jupiter</groupId>
@@ -19,7 +30,12 @@
           <version>5.6.2</version>
           <scope>test</scope>
         </dependency>
-      </dependencies>
+        <dependency>
+            <groupId>edu.rice.pcdp</groupId>
+                <artifactId>pcdp-core</artifactId>
+                <version>${pcdp.version}</version>
+        </dependency>
+        </dependencies>
     <build>
     <plugins>
             <plugin>
