@@ -23,6 +23,9 @@ public class FirstUniqChar {
   }
 
   public static void main(String[] args){
+    char i = '2';
+    System.out.println((int)i - 48);
+    System.out.println(new Integer(i));
     String test = "leetcode";
     String test1 = "loveleetcode";
     String test2 = "aabbcc";
