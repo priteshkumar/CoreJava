@@ -28,7 +28,7 @@ public class Subsets {
   }
 
   public static void main(String[] args) {
-    int[] a = {1, 2, 3,4};
+    int[] a = {3,2,1};
     System.out.println(subsets(a));
   }
 
