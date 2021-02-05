@@ -1,6 +1,8 @@
 package com.mavixk.jcp.algorithms;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Subsetsfwd {
@@ -28,20 +30,22 @@ public class Subsetsfwd {
 
   }
 
-  public static List<List<Integer>> printKSubsetsFwd(int[] nums, List<List<Integer>> res,
-      List<Integer> out, int index) {
-    if (index > nums.length) {
+  public static ArrayList<ArrayList<Integer>> printKSubsetsFwd(ArrayList<Integer> nums,
+      ArrayList<ArrayList<Integer>> res,
+      ArrayList<Integer> out, int index) {
+    if (index > nums.size()) {
       return res;
     }
 
-    System.out.println(out);
+    // System.out.println(out);
     res.add(out);
-    for (int i = index; i < nums.length; i++) {
-      List<Integer> temp = new ArrayList<>(out);
-      temp.add(nums[i]);
-      return printKSubsetsFwd(nums, res, temp, i + 1);
+    List<List<Integer>> m = null;
+    for (int i = index; i < nums.size(); i++) {
+      ArrayList<Integer> temp = new ArrayList<>(out);
+      temp.add(nums.get(i));
+      res = printKSubsetsFwd(nums, res, temp, i + 1);
     }
-    System.out.println(res);
+    // System.out.println(m);
     return res;
   }
 
@@ -52,11 +56,11 @@ public class Subsetsfwd {
   }
 
   public static void main(String[] args) {
-    int[] a = {1, 2};
+    ArrayList<Integer> a = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
     //System.out.println(subsets(a));
-    List<List<Integer>> res = new ArrayList<>();
-    List<Integer> out = new ArrayList<>();
-    printKSubsetsFwd(a, res, out, 0);
+    ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+    ArrayList<Integer> out = new ArrayList<>();
+    System.out.println(printKSubsetsFwd(a, res, out, 0));
   }
 
 }
